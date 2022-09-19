@@ -1,8 +1,11 @@
+using LecConsumeWebAPI.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<HttpClient>();
+builder.Services.AddScoped<IPetRepository, WebAPIPetRepository>();
 
 var app = builder.Build();
 
